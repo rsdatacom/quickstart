@@ -1,0 +1,4 @@
+baseURL = 'https://rsdatacom.github.io/test1/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'ananke'
