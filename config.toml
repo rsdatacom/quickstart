@@ -1,4 +1,4 @@
 baseURL = 'https://rsdatacom.github.io/quickstart/'
 languageCode = 'en-us'
-title = 'My Test Site'
+title = 'Updated test site'
 theme = 'ananke'
