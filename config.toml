@@ -1,4 +1,4 @@
-baseURL = 'https://rsdatacom.github.io/test1/'
+baseURL = 'https://rsdatacom.github.io/quickstart/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'My Test Site'
 theme = 'ananke'

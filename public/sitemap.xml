@@ -2,10 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rsdatacom.github.io/test1/categories/</loc>
+    <loc>https://rsdatacom.github.io/quickstart/posts/my-first-post/</loc>
+    <lastmod>2023-04-08T19:45:13+12:00</lastmod>
   </url><url>
-    <loc>https://rsdatacom.github.io/test1/</loc>
+    <loc>https://rsdatacom.github.io/quickstart/</loc>
+    <lastmod>2023-04-08T19:45:13+12:00</lastmod>
   </url><url>
-    <loc>https://rsdatacom.github.io/test1/tags/</loc>
+    <loc>https://rsdatacom.github.io/quickstart/posts/</loc>
+    <lastmod>2023-04-08T19:45:13+12:00</lastmod>
+  </url><url>
+    <loc>https://rsdatacom.github.io/quickstart/categories/</loc>
+  </url><url>
+    <loc>https://rsdatacom.github.io/quickstart/tags/</loc>
   </url>
 </urlset>
