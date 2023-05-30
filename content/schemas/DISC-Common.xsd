@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   elementFormDefault="qualified"
+		   >
+	
+	
+	<xs:complexType name="additionalPropertiesType" >
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="property">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="name" type="xs:string" use="required" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+		
+	
+	<xs:complexType name="addressType">
+		<xs:all>
+			<xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="street1" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="street2" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="street3" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="suburb" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="city" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="state" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="postcode" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="country" type="xs:string" minOccurs="0" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:simpleType name="booleanType">
+	  <xs:restriction base="xs:string">
+		<xs:enumeration value="true" />
+		<xs:enumeration value="false" />
+		<xs:enumeration value="TRUE" />
+		<xs:enumeration value="FALSE" />
+		<xs:enumeration value="True" />
+		<xs:enumeration value="False" />
+	  </xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="contactType">
+		<xs:all>
+			<xs:element name="first_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="last_name" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="email" type="xs:string" minOccurs="0" maxOccurs="1" />
+			<xs:element name="phone" type="xs:unsignedInt" minOccurs="0" maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+
+	<xs:complexType name="headerType">
+		<xs:all>
+			<xs:element name="message_type" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="message_id" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="message_owner" type="xs:string" minOccurs="1" maxOccurs="1" />
+			<xs:element name="message_receivers" minOccurs="1" maxOccurs="1" >
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="receiver">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="id" type="xs:string" />
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="linearType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal" />
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="quantityType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="uom" type="xs:string" use="optional" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="temperatureType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal" />
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="volumeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal" />
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="weightType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal" />
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<!-- Unit of Measure validations -->
+
+	<xs:complexType name="unitsOfMeasureType">
+		<xs:sequence>
+			<xs:element name="uom_linear" type="uom_linearType" />
+			<xs:element name="uom_temperature" type="uom_temperatureType" />
+			<xs:element name="uom_volume" type="uom_volumeType" />
+			<xs:element name="uom_weight" type="uom_weightType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="uom_linearType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mm" />
+			<xs:enumeration value="cm" />
+			<xs:enumeration value="m" />
+			<xs:enumeration value="MM" />
+			<xs:enumeration value="CM" />
+			<xs:enumeration value="M" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="uom_temperatureType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C" />
+			<xs:enumeration value="F" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="uom_volumeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cm3" />
+			<xs:enumeration value="m3" />
+			<xs:enumeration value="ml" />
+			<xs:enumeration value="l" />
+			<xs:enumeration value="CM3" />
+			<xs:enumeration value="M3" />
+			<xs:enumeration value="ML" />
+			<xs:enumeration value="L" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="uom_weightType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="g" />
+			<xs:enumeration value="kg" />
+			<xs:enumeration value="G" />
+			<xs:enumeration value="KG" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- End of Unit of Measure validations -->
+
+</xs:schema>
