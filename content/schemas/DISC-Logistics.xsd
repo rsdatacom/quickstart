@@ -23,6 +23,7 @@
 			<xs:element name="shipped_date" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
 			<xs:element name="received_date" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
 			<xs:element name="completed_date" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
+			<xs:element name="committed_date" type="xs:dateTime" minOccurs="0" maxOccurs="1" />
 			<xs:element name="origin_owner_code" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="origin_owner_name" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="origin_operator_code" type="xs:string" minOccurs="0" maxOccurs="1" />
